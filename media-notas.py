@@ -7,13 +7,19 @@ alunos = [
 
 
 def calcular_media(notas):
-    # seu código
-    pass
+    soma = sum(notas)
+    media = soma / len(notas)
+    return media
+
 
 
 def verificar_aprovacao(media):
-    # seu código
-    pass
+    if media >= 7:
+        return "Aprovado"
+    else:
+        return "Reprovado"
 
-
-# seu código principal
+for aluno in alunos:
+    media = calcular_media(aluno["notas"])
+    verifica = verificar_aprovacao(media)
+    print(f"Nome: {aluno['nome']}, Nota: {media}, Status: {verifica}")
